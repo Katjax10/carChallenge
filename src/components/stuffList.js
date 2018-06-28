@@ -15,6 +15,18 @@ class stuffList extends React.Component {
     constructor(props){
       super(props);
       this.sortCars = this.sortCars.bind(this);
+      this.searchCars = this.searchCars.bind(this);
+      this.setState = this.setState.bind(this);
+      this.state = {
+        search: ''
+      }
+    }
+
+    searchCars(event){
+      const value = event.target.value;
+      this.setState({
+        search: value
+      });
     }
   
     sortCars(key) {
@@ -28,7 +40,7 @@ class stuffList extends React.Component {
           <Container className="tableWrapper">
             <Row>
               <Col xs="12" sm="4">
-                <Input placeholder="Search Cars"/>
+                <Input placeholder="Search Cars" onChange={this.searchCars}/>
               </Col>
             </Row>
             <Row>
@@ -40,6 +52,7 @@ class stuffList extends React.Component {
             </Row>
               <CarEntry
                 cars={this.props.stuff}
+                searchState={this.state.search}
               />
           </Container>
 

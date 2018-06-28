@@ -1,9 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
 import {Col, Row, Nav, NavItem} from 'reactstrap';
 import {Link, BrowserRouter} from 'react-router-dom';
 
-const findEntry =(cars) => {
+const findEntry =(cars, searchState) => {
+  console.log(searchState);
+
+  const convertBack = JSON.stringify(cars);
+
+
+  if(searchState.length){
+    const getIt = _.find(convertBack, searchState);
+    return (<div>{getIt}</div>)
+  }
+
   return cars.map((car, index) => {
     const make = car.get('make');
     const model=car.get('model');
@@ -26,9 +37,12 @@ const findEntry =(cars) => {
     )
   });
 };
-const CarEntry = ({cars}) => (
-      <span>{findEntry(cars)}</span>
-);
+const CarEntry = ({cars, searchState}) => {
+  debugger;
+  return (
+    <span>{findEntry(cars, searchState)}</span>
+  );
+}
 
 CarEntry.propTypes = {
   cars: PropTypes.object
