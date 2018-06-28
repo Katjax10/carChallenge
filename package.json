@@ -2,15 +2,28 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "main":"App.js",
-  "proxy": "http://localhost:3001",
+  "main": "App.js",
+  "proxy": "https://gist.githubusercontent.com/creatifyme/2a334c00a117097bfdb47f031edf292c/raw/efb52ecf1cf92e2261f504ec7639c68b5ff390bd/cars.json",
   "dependencies": {
+    "ajv": "^6.5.1",
+    "axios": "^0.18.0",
+    "immutable": "^3.8.2",
+    "jquery": "^1.12.4",
+    "popper.js": "^1.14.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
+    "react-router": "^4.3.1",
+    "react-router-bootstrap": "^0.24.4",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "1.0.17",
+    "reactstrap": "^6.1.0",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0"
+  },
+  "peerDependencies": {
+    "popper.js": "^1.14.1",
+    "ajv": "^6.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

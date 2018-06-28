@@ -1,0 +1,25 @@
+.tableWrapper {
+    margin-top:40px;
+}
+
+.carEntry {
+    border: 2px solid red;
+}
+
+.car-details{
+    margin-top: 50px;
+}
+
+.carDetailLink {
+    display: inline-flex;
+    margin: 5px;
+    width: 300%;
+}
+
+.carRow {
+    border: 1px solid #888888;
+}
+
+.carImage {
+    width: 200px;
+}
