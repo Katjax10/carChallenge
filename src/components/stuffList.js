@@ -27,6 +27,7 @@ class stuffList extends React.Component {
       this.setState({
         search: value
       });
+      this.props.actions.searchCars(value, this.props.stuff);
     }
   
     sortCars(key) {
@@ -43,7 +44,7 @@ class stuffList extends React.Component {
                 <Input placeholder="Search Cars" onChange={this.searchCars}/>
               </Col>
             </Row>
-            <Row>
+            <Row className="carHeader">
               <Col xs="12" sm="2" onClick={this.sortCars('year')}>Year</Col>
               <Col xs="12" sm="3">Make</Col>
               <Col xs="12" sm="2">Model</Col>

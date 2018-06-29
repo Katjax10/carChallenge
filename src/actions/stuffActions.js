@@ -1,6 +1,7 @@
 import {
   RECEIVE_STUFF,
-  SORT_CARS
+  SORT_CARS,
+  SEARCH_CARS
 } from './allActions';
 import axios from 'axios';
 export function receiveStuff(data) {
@@ -22,6 +23,15 @@ export function fetchStuff() {
           console.log('there was an error', error);
         })
     };
+}
+
+export function searchCars(value, payload) {
+  console.log(value)
+  console.log('payload', payload);
+    return {
+      type: SEARCH_CARS,
+      payload: value
+  }
 }
 
 export function sortCars(key) {

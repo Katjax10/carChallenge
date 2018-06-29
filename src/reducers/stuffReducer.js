@@ -21,18 +21,29 @@
 // }
 
 
-import { FETCH_STUFF, RECEIVE_STUFF, SORT_CARS } from '../actions/allActions';
+import { FETCH_STUFF, RECEIVE_STUFF, SORT_CARS, SEARCH_CARS } from '../actions/allActions';
 import createReducer from './createReducer';
 import Immutable from 'immutable';
 const initialState ={
   stuff: [],
   sort: {}
-};
+  };
 
 const cars = {
   [RECEIVE_STUFF]: (state, payload) => {
     const newState = Immutable.fromJS(payload);
     return state.stuff = newState;
+  },
+
+  [SEARCH_CARS]: (state, value) => {
+
+    state.map((findSearch)=> {
+      
+    })
+
+    console.log(state);
+    console.log(value);
+    return Immutable.fromJS(state);
   },
 
   [SORT_CARS]: (state, payload) => {

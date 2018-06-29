@@ -10,10 +10,10 @@ const CarDetails = ({location}) => {
   return(
     <Container className="car-details">
       <Row>
-        <Col className="carImage" xs="12" sm="6">
+        <Col className="carImage" xs="12" sm="3">
           <img className="carImage" src={`${location.state.pic}`} />
         </Col>
-        <Col className="col-sm-4 col-xs-12">
+        <Col xs="12" sm="4">
           <Row>Year: {location.state.carYear}</Row>
           <Row>Make: {location.state.carMake}</Row>
           <Row>Model: {location.state.carModel}</Row>
