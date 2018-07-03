@@ -12,6 +12,10 @@
     margin-top: 20px;
 }
 
+.headerMobile {
+    display: none;
+}
+
 .car-details{
     margin-top: 50px;
 }
@@ -37,5 +41,18 @@
 @media (max-width: 768px) {
     .carDetailLink{
         display: inline;
+    }
+    .carHeader {
+        display: none;
+    }
+    .headerMobile {
+        display: block;
+        height: 50px;
+        border: 1px solid #888888;
+        margin-top: 20px;
+        padding-left: 20px;
+    }
+    .tableWrapper {
+        margin: 10px;
     }
 }

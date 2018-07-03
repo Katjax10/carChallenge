@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import CarDetails from './components/carDetails';
-import StuffList from './components/stuffList';
+import CarDetails from './components/CarDetails';
+import CarManager from './components/CarManager';
 
 class App extends Component {
     render() {
@@ -9,7 +9,7 @@ class App extends Component {
           <Router>
             <div className="app">
                 <Switch>
-                    <Route path="/" component={StuffList} exact={true}/>
+                    <Route path="/" component={CarManager} exact={true}/>
                     <Route path="/carDetails/:year/:url/:make/:model/:mileage" component={CarDetails}/>
                 </Switch>
             </div>
