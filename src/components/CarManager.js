@@ -1,12 +1,11 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as carActions from '../actions/carActions';
-// import { carSelector } from '../reducers/selectors/carsSelector';
 import Immutable from 'immutable';
 import PropTypes from 'prop-types';
 import { Input, Container, Row, Col } from 'reactstrap';
 import React from 'react';
-import CarEntry from './CarEntry';
+import CarTable from './CarTable';
 
 class CarManager extends React.Component {
     componentWillMount() {
@@ -17,6 +16,7 @@ class CarManager extends React.Component {
       super(props);
       this.sortCars = this.sortCars.bind(this);
       this.searchCars = this.searchCars.bind(this);
+      this.sortOrder = this.sortOrder.bind(this);
       this.setState = this.setState.bind(this);
       this.state = {
         search: '',
@@ -33,6 +33,14 @@ class CarManager extends React.Component {
 
       });
     }
+
+  sortOrder(){
+    let sortOrder;
+    if(!this.state.clicked){
+      return sortOrder = 'Sorted in No particular Order. Click on header in which you would like to sort';
+    }
+    return sortOrder = `Sorted By: ${this.state.sortKey} in ${this.state.sortDirection}`;
+  }
 
     sortCars(key) {
         return () => {
@@ -57,15 +65,20 @@ class CarManager extends React.Component {
                 <Input placeholder="Search Cars" onChange={this.searchCars}/>
               </Col>
             </Row>
+            <Row className="sortInfo">
+              <Col xs="12" sm="12">
+                {this.sortOrder()}
+              </Col>
+            </Row>
             <Row className="carHeader">
-              <Col xs="12" sm="2" onClick={this.sortCars('year')}>Year</Col>
-              <Col xs="12" sm="3"  onClick={this.sortCars('make')}>Make</Col>
-              <Col xs="12" sm="2" onClick={this.sortCars('model')}>Model</Col>
-              <Col xs="12" sm="2" onClick={this.sortCars('mileage')}>Mileage</Col>
-              <Col xs="12" sm="3" onClick={this.sortCars('created_at')}>Created Date</Col>
+              <Col xs="12" sm="2" className='sortHeader' onClick={this.sortCars('year')}>Year</Col>
+              <Col xs="12" sm="3" className='sortHeader' onClick={this.sortCars('make')}>Make</Col>
+              <Col xs="12" sm="2" className='sortHeader' onClick={this.sortCars('model')}>Model</Col>
+              <Col xs="12" sm="2" className='sortHeader' onClick={this.sortCars('mileage')}>Mileage</Col>
+              <Col xs="12" sm="3" className='sortHeader' onClick={this.sortCars('created_at')}>Created Date</Col>
             </Row>
             <Row className="headerMobile">Cars</Row>
-              <CarEntry
+              <CarTable
                 cars={this.props.carList}
                 searchState={this.state.search}
                 sortKey={this.state.sortKey}
@@ -79,7 +92,6 @@ class CarManager extends React.Component {
 }
 
 CarManager.propTypes = {
-    carActions: PropTypes.object,
     carList: PropTypes.object
 };
 

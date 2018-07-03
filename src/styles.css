@@ -16,7 +16,7 @@
     display: none;
 }
 
-.car-details{
+.carDetails{
     margin-top: 50px;
 }
 
@@ -26,8 +26,20 @@
     width: 300%;
 }
 
+.carEntryDetails {
+    margin:20px;
+}
+
 .carRow {
     border: 1px solid #888888;
+}
+
+.sortHeader:hover {
+    cursor: pointer;
+}
+
+.sortInfo {
+    margin-top:10px;
 }
 
 .noMatch {

@@ -115,15 +115,15 @@ const findEntry =(cars, searchState, sortKey, clicked, sortDirection ) => {
     )
   })
 };
-const CarEntry = ({cars, searchState, sortKey, clicked, sortDirection}) => {
+const CarTable = ({cars, searchState, sortKey, clicked, sortDirection}) => {
   return (
     findEntry(cars, searchState, sortKey, clicked, sortDirection)
   );
 };
 
-CarEntry.propTypes = {
+CarTable.propTypes = {
   cars: PropTypes.object
 };
 
 
-export default CarEntry;
+export default CarTable;

@@ -8,12 +8,12 @@ import {Col, Container, Row} from 'reactstrap';
 const CarDetails = ({location}) => {
   console.log('location', location);
   return(
-    <Container className="car-details">
+    <Container className="carDetails">
       <Row>
         <Col className="carImage" xs="12" sm="6" md="4" lg="3">
           <img className="carImage" src={`${location.state.pic}`} alt="car entry" />
         </Col>
-        <Col xs="12" sm="3">
+        <Col xs="12" sm="3" className="carEntryDetails">
           <Row>Year: {location.state.carYear}</Row>
           <Row>Make: {location.state.carMake}</Row>
           <Row>Model: {location.state.carModel}</Row>
