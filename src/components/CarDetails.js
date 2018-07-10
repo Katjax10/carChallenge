@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import {Col, Container, Row} from 'reactstrap';
 
 const CarDetails = ({location}) => {
-  console.log('location', location);
   return(
     <Container className="carDetails">
       <Row>
@@ -22,11 +21,10 @@ const CarDetails = ({location}) => {
       </Row>
     </Container>
   )
-}
+};
 
 CarDetails.propTypes = {
   cars: PropTypes.object
 };
-
 
 export default CarDetails;
